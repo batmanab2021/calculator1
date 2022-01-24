@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+flex container
+.flex-nav{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-nav ul li{
+  margin: 0px;
+  padding: 0px;
+  border: #282c34;
+}
+.App{
+  background-color: aqua;
+  border: 0px;
+  max-width: fit-content;
+}
