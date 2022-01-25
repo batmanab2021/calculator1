@@ -1,7 +1,7 @@
-export const Display = ({ value }) => {
+export const Display = ({ symbol }) => {
     return (
       <div className="display">
-        <h1>{value}</h1>
+        <h1>{symbol}</h1>
       </div>
     )
   }

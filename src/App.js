@@ -7,28 +7,28 @@ import { Display } from "./components/Display"
 import Buttons from "./buttons.json"
 
 const App = () => {
-  const [total, setTotal] = useState([0])
+  const [result, setresult] = useState([0])
 
-  const handleClick = (val) => {
-    if (val === "clear") {
-      setTotal([0])
-    } else if (val === "=") {
-      let sum = evaluate(total.join(""))
-      setTotal([sum])
+  const submit = (symbol) => {
+    if (symbol === "clear") {
+      setresult([0])
+    } else if (symbol === "=") {
+      let sum = evaluate(result.join(""))
+      setresult([sum])
     } else {
-      let temp = [...total]
+      let temp = [...result]
       if (temp[0] === 0) {
         temp.shift()
       }
-      setTotal([...temp, val])
+      setresult([...temp, symbol])
     }
   }
 
   return (
     <div className="wrapper">
-      <Display value={total} />
+      <Display symbol={setresult} />
       {Buttons.map((item, index) => {
-        return <Button key={index} value={item} handleClick={handleClick} />
+        return <Button key={index} symbol={item} handleClick={submit} />
       })}
     </div>
   )

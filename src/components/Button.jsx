@@ -1,5 +1,6 @@
+import { click } from "@testing-library/user-event/dist/click"
 import React from "react"
 
-export const Button = ({ value, handleClick }) => {
-  return <button onClick={() => handleClick(value.val)}>{value.displayVal ? value.displayVal : value.val}</button>
+export const Button = ({ symbol, submit }) => {
+  return <button onClick={() => click(symbol.submit)}>{<value className="displaysymbol"></value> ? symbol.displaysymbol : symbol.symbol}</button>
 }
